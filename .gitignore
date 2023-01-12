@@ -1,6 +1,5 @@
 node_modules
 test_script.js
-icons
 .DS_Store
 Makefile
 tests

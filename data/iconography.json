@@ -1,10 +1,46 @@
 {
   "icons": [
     {
-      "hash": "3c99f77cd4d0a909133aaced49efb1ce95fa0064e3787136e0132f42dc0b01f3",
+      "hash": "fe66188d5f4e1e13f62da9c0231bbe89e4c9e1a6ad03208d1b366913fa6f09c0",
+      "points": 1727,
+      "elements": 1,
+      "type": "composition"
+    },
+    {
+      "hash": "500ee18f0c199c140218ace8f52b49a8c3ee83518006a5011ac4bcdf48301662",
+      "points": 1270,
+      "elements": 1,
+      "type": "composition"
+    },
+    {
+      "hash": "ed1987b0016eaba9206afce3c44e11d1d78e0de64a367c5f3b4084c42676492f",
       "points": 289,
       "elements": 1,
-      "type": "pattern"
+      "type": "motiff"
+    },
+    {
+      "hash": "3254f1acb494593eb55da5a3f915ad5999e9a95b17c39f790623f29c888a2c8e",
+      "points": 280,
+      "elements": 1,
+      "type": "frize"
+    },
+    {
+      "hash": "10fd2e589ef57066b928a3b2fb71afcb7e7405674e76d7e1736003a12ab7ea4a",
+      "points": 255,
+      "elements": 1,
+      "type": "frize"
+    },
+    {
+      "hash": "8c4fa2edc8c2029654d6153da813ecc652c924949ea1146a896207a4eabe9bff",
+      "points": 98,
+      "elements": 1,
+      "type": "frize"
+    },
+    {
+      "hash": "a38537badf5a6de6b6291076ab43bf18a59c355669265d895f885cc7ac5a6d3a",
+      "points": 85,
+      "elements": 1,
+      "type": "motiff"
     }
   ]
 }
