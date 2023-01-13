@@ -1,8 +1,62 @@
-const { optimizeSVG, sha256Hash } = require("./clean_svg");
-const { countPoints } = require("./complexity");
 const fs = require("fs");
 const path = require("path");
 const minimist = require("minimist");
+const crypto = require("crypto");
+const { optimize } = require("svgo");
+const svgoConfig = require("./svgo.config.js");
+
+// Function 1: Optimizes the SVG file and returns the optimized content
+function optimizeSVG(file) {
+  return new Promise((resolve, reject) => {
+    fs.readFile(file, (err, data) => {
+      if (err) reject(err);
+      else {
+        // check if file is an SVG before optimizing
+        const fileExt = file.substr(file.lastIndexOf(".") + 1);
+        if (fileExt !== "svg") {
+          reject("File is not an SVG");
+        }
+        const result = optimize(data.toString(), svgoConfig);
+        resolve(result.data);
+      }
+    });
+  });
+}
+
+//Creates a 256 hash of a string (in this case an optimized svg)
+function sha256Hash(data) {
+  const hash = crypto.createHash("sha256");
+  hash.update(data);
+  return hash.digest("hex");
+}
+
+function countPoints(svgString) {
+  let pointsCount = 0;
+  let elementCount = 0;
+  const pathRegex = /<path[^>]* d="([^"]*)"[^>]*>/g;
+  let match;
+  while ((match = pathRegex.exec(svgString))) {
+    const pathData = match[1];
+    const points = pathData.split(/[\s,]+/);
+    pointsCount += points.length;
+    elementCount++;
+  }
+
+  const shapeRegex = /<(rect|circle|ellipse)[^>]*\/>/g;
+  while ((match = shapeRegex.exec(svgString))) {
+    pointsCount += 4;
+    elementCount++;
+  }
+
+  const polygonRegex = /<(polygon|polyline)[^>]* points="([^"]*)"[^>]*>/g;
+  while ((match = polygonRegex.exec(svgString))) {
+    const polyPoints = match[2];
+    const points = polyPoints.split(/[\s,]+/);
+    pointsCount += points.length;
+    elementCount++;
+  }
+  return { pointsCount: pointsCount, elementCount: elementCount };
+}
 
 function readJsonFile(filepath) {
   try {
