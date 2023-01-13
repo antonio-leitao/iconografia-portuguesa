@@ -1,30 +1,42 @@
-# Types of Iconography
+# Contributing to the Iconography
 
-<a href="https://simpleicons.org"><img src="https://img.shields.io/badge/dynamic/json?color=informational&label=icons&prefix=%20&logo=simpleicons&query=%24.icons.length&url=https%3A%2F%2Fraw.githubusercontent.com%2Fantonio-leitao%2Ficonografia-portuguesa%2Fmaster%2Fdata%2Ficonography.json" alt="Number of icons currently in the library"/></a>
+# 1. Tracing guidelines
+
+Monocromatic
+no stroke (only fill)
+hints(use photoshop/gimp to remove prespective).
+
+Trace it, add it to a canvas of 248 by 248, at least two sides touching the edges.
+
+### Types
 
 Motif: Has no symmetry
-Frize: 1D Symmetry (infinite),
+Frize: 1D Symmetry
 Tile: 2D symmetry
-Ensemble: composition of motiffs.
+Composition: composition of motiffs.
 
 Symmetries are considered planar and without rotations.
 
-# 1. Tracing the SVG
+# 2. Adding an svg
 
-Trace it, add it to a canavas of 248 by 248, at least two sides touching the edges.
+Add the svg to the iconography either by creating an issue with the svg directly or creating a pull request.
 
-1. Motif -> has no symmetry.
-2. If it is a frize add only the repeatable motif, no symmetry or rotation necessary.(example).
-3. If it is a tile add only tileable motiff.
+### A. Create issue
 
-# 2. Cleaning the SVG.
+1. Trace the svg (check guidelines) for how.
+2. Add tag new_icon.
+3. Add svg and original image, if possible with location.
+4. Issue will be closed if svg added.
 
-1. Use SVGOMG to copy and paste the file clean it.
-2. Run `node scripts\add.js path/to.svg --type=motiff|frize|pattern|composition`.
+### B. Create Pull Request
+
+1. Trace the svg (check guidelines) for how.
+2. Use SVGOMG to copy and paste the file clean it.
+3. Add svg to iconography; Run `node scripts\add.js path/to.svg --type=motiff|frize|pattern|composition`. (path to svg?)
    The previous command will hash the svg file add the icon and index it automatically.
    It will also attempt to optimize the svg code. The command will overwrite and rename the input file. If it does not happen it measn that an icon exactly like it already exists in the database.
 
-# 3. Meta Data
+# Meta Data
 
 ```json
 {

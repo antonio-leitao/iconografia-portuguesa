@@ -1,100 +1,268 @@
 module.exports = {
   multipass: true,
-  eol: "lf",
+  js2svg: {
+    indent: 2,
+    pretty: true,
+  },
   plugins: [
-    "cleanupAttrs",
-    "inlineStyles",
-    "removeDoctype",
-    "removeXMLProcInst",
-    "removeComments",
-    "removeMetadata",
-    "removeDesc",
-    "removeUselessDefs",
-    "removeEditorsNSData",
-    "removeEmptyAttrs",
-    "removeHiddenElems",
-    "removeEmptyText",
-    "removeEmptyContainers",
-    "cleanupEnableBackground",
     {
-      name: "convertPathData",
+      name: "removeDoctype",
       params: {
-        // 3 decimals of precision in floating point numbers
         floatPrecision: 3,
-        // Some editors (e.g. Adobe Illustrator and Sketch) cannot parse flags
-        // without space wrapping
-        noSpaceAfterFlags: false,
+        transformPrecision: 5,
       },
     },
-    "convertTransform",
+    {
+      name: "removeXMLProcInst",
+      params: {
+        floatPrecision: 3,
+        transformPrecision: 5,
+      },
+    },
+    {
+      name: "removeComments",
+      params: {
+        floatPrecision: 3,
+        transformPrecision: 5,
+      },
+    },
+    {
+      name: "removeMetadata",
+      params: {
+        floatPrecision: 3,
+        transformPrecision: 5,
+      },
+    },
+    {
+      name: "removeEditorsNSData",
+      params: {
+        floatPrecision: 3,
+        transformPrecision: 5,
+      },
+    },
+    {
+      name: "cleanupAttrs",
+      params: {
+        floatPrecision: 3,
+        transformPrecision: 5,
+      },
+    },
+    {
+      name: "mergeStyles",
+      params: {
+        floatPrecision: 3,
+        transformPrecision: 5,
+      },
+    },
+    {
+      name: "inlineStyles",
+      params: {
+        floatPrecision: 3,
+        transformPrecision: 5,
+      },
+    },
+    {
+      name: "minifyStyles",
+      params: {
+        floatPrecision: 3,
+        transformPrecision: 5,
+      },
+    },
+    {
+      name: "cleanupIds",
+      params: {
+        floatPrecision: 3,
+        transformPrecision: 5,
+      },
+    },
+    {
+      name: "removeRasterImages",
+      params: {
+        floatPrecision: 3,
+        transformPrecision: 5,
+      },
+    },
+    {
+      name: "removeUselessDefs",
+      params: {
+        floatPrecision: 3,
+        transformPrecision: 5,
+      },
+    },
+    {
+      name: "cleanupNumericValues",
+      params: {
+        floatPrecision: 3,
+        transformPrecision: 5,
+      },
+    },
+    {
+      name: "convertColors",
+      params: {
+        floatPrecision: 3,
+        transformPrecision: 5,
+      },
+    },
     {
       name: "removeUnknownsAndDefaults",
       params: {
-        // Keep the 'role' attribute, if it's already defined
-        keepRoleAttr: true,
+        floatPrecision: 3,
+        transformPrecision: 5,
       },
     },
-    "removeNonInheritableGroupAttrs",
     {
-      // Remove paths with fill="none"
+      name: "removeNonInheritableGroupAttrs",
+      params: {
+        floatPrecision: 3,
+        transformPrecision: 5,
+      },
+    },
+    {
       name: "removeUselessStrokeAndFill",
       params: {
-        removeNone: true,
+        floatPrecision: 3,
+        transformPrecision: 5,
       },
     },
-    "removeUselessStrokeAndFill",
-    "removeUnusedNS",
-    "cleanupIds",
-    "cleanupNumericValues",
-    "cleanupListOfValues",
-    "moveGroupAttrsToElems",
-    "collapseGroups",
-    "removeRasterImages",
     {
-      // Compound all <path>s into one
-      name: "mergePaths",
+      name: "removeViewBox",
       params: {
-        force: true,
-        noSpaceAfterFlags: false,
+        floatPrecision: 3,
+        transformPrecision: 5,
       },
     },
     {
-      // Convert basic shapes (such as <circle>) to <path>
+      name: "cleanupEnableBackground",
+      params: {
+        floatPrecision: 3,
+        transformPrecision: 5,
+      },
+    },
+    {
+      name: "removeHiddenElems",
+      params: {
+        floatPrecision: 3,
+        transformPrecision: 5,
+      },
+    },
+    {
+      name: "removeEmptyText",
+      params: {
+        floatPrecision: 3,
+        transformPrecision: 5,
+      },
+    },
+    {
       name: "convertShapeToPath",
       params: {
-        // including <arc>
-        convertArcs: true,
+        floatPrecision: 3,
+        transformPrecision: 5,
       },
     },
-    "convertEllipseToCircle",
     {
-      // Sort the attributes on the <svg> tag
+      name: "moveElemsAttrsToGroup",
+      params: {
+        floatPrecision: 3,
+        transformPrecision: 5,
+      },
+    },
+    {
+      name: "moveGroupAttrsToElems",
+      params: {
+        floatPrecision: 3,
+        transformPrecision: 5,
+      },
+    },
+    {
+      name: "collapseGroups",
+      params: {
+        floatPrecision: 3,
+        transformPrecision: 5,
+      },
+    },
+    {
+      name: "convertPathData",
+      params: {
+        floatPrecision: 3,
+        transformPrecision: 5,
+      },
+    },
+    {
+      name: "convertEllipseToCircle",
+      params: {
+        floatPrecision: 3,
+        transformPrecision: 5,
+      },
+    },
+    {
+      name: "convertTransform",
+      params: {
+        floatPrecision: 3,
+        transformPrecision: 5,
+      },
+    },
+    {
+      name: "removeEmptyAttrs",
+      params: {
+        floatPrecision: 3,
+        transformPrecision: 5,
+      },
+    },
+    {
+      name: "removeEmptyContainers",
+      params: {
+        floatPrecision: 3,
+        transformPrecision: 5,
+      },
+    },
+    {
+      name: "mergePaths",
+      params: {
+        floatPrecision: 3,
+        transformPrecision: 5,
+      },
+    },
+    {
+      name: "removeUnusedNS",
+      params: {
+        floatPrecision: 3,
+        transformPrecision: 5,
+      },
+    },
+    {
       name: "sortAttrs",
       params: {
-        order: ["role", "viewBox"],
-        xmlnsOrder: "end",
+        floatPrecision: 3,
+        transformPrecision: 5,
       },
     },
-    "sortDefsChildren",
-    "removeDimensions",
     {
-      name: "removeAttrs",
+      name: "sortDefsChildren",
       params: {
-        attrs: ["svg:(?!(role|viewBox|xmlns))", "path:(?!d)", "title:*"],
+        floatPrecision: 3,
+        transformPrecision: 5,
       },
     },
-    "removeElementsByAttr",
     {
-      // Keep the role="img" attribute and automatically add it
-      // to the <svg> tag if it's not there already
-      name: "addAttributesToSVGElement",
+      name: "removeTitle",
       params: {
-        attributes: [{ role: "img", xmlns: "http://www.w3.org/2000/svg" }],
+        floatPrecision: 3,
+        transformPrecision: 5,
       },
     },
-    "removeOffCanvasPaths",
-    "removeStyleElement",
-    "removeScriptElement",
-    "reusePaths",
+    {
+      name: "removeDesc",
+      params: {
+        floatPrecision: 3,
+        transformPrecision: 5,
+      },
+    },
+    {
+      name: "removeDimensions",
+      params: {
+        floatPrecision: 3,
+        transformPrecision: 5,
+      },
+    },
   ],
 };

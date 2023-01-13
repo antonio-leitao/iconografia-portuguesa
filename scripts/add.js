@@ -19,17 +19,15 @@ function readJsonFile(filepath) {
 
 function checkArgs(args) {
   const path = args._[0];
-  const type = args.type || null;
+  const type = args.type;
   if (!path) {
     console.error("Error: Please provide a filepath");
     process.exit(1);
   }
-  const acceptableTypes = ["motiff", "frize", "pattern", "composition", null];
+  const acceptableTypes = ["motiff", "frize", "tile", "composition"];
   if (!acceptableTypes.includes(type)) {
     console.error(
-      `Error: Unrecognized type. Acceptable options are ${acceptableTypes
-        .filter((x) => x != null)
-        .toString()} or no option at all`
+      `Error: Unrecognized type. Acceptable options are ${acceptableTypes.toString()} got ${type} instead.`
     );
     process.exit(1);
   }
@@ -63,7 +61,10 @@ async function main() {
       //add it and rename it if it doesn't
       if (!existingIcon) {
         iconography.icons.push(icon);
-        fs.renameSync(path, "icons/" + hash + ".svg");
+        fs.writeFileSync("icons/" + hash + ".svg", svgString);
+        console.log(`Added ${path} to iconography.`);
+      } else {
+        console.log(`Icon already exists!.`);
       }
     })
     .then(() => {

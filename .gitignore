@@ -1,5 +1,5 @@
 node_modules
 test_script.js
-.DS_Store
+DS_Store
 Makefile
 tests
