@@ -264,5 +264,13 @@ module.exports = {
         transformPrecision: 5,
       },
     },
+    {
+      name: "removeUnknownsAndDefaults",
+      params: {
+        floatPrecision: 3,
+        transformPrecision: 5,
+        keepDataAttrs: false
+      },
+    },
   ],
 };

@@ -116,7 +116,7 @@ async function main() {
       if (!existingIcon) {
         iconography.icons.push(icon);
         fs.writeFileSync("icons/" + hash + ".svg", svgString);
-        console.log(`Added ${path} to iconography.`);
+        console.log(`Added ${path.split('/').pop()} to iconography.`);
       } else {
         console.log(`Icon already exists!.`);
       }
