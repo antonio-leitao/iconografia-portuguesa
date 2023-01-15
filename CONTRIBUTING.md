@@ -6,7 +6,10 @@ Monocromatic
 no stroke (only fill)
 hints(use photoshop/gimp to remove prespective).
 
-Trace it, add it to a canvas of 248 by 248, at least two sides touching the edges.
+Trace it, add it to a canvas of 248 by 248,
+
+> **Warning**
+> Patterns of type `frize` and `tile`, in order to be tileable, must be reduced to their bounding box as to be properly tileable with at least two sides must be touching the edges of the 248 x 248 canvas.
 
 ### Types
 
@@ -31,22 +34,20 @@ Add the svg to the iconography either by creating an issue with the svg directly
 ### B. Create Pull Request
 
 1. Trace the svg (check guidelines) for how.
-2. Use SVGOMG to copy and paste the file clean it.
-3. Add svg to iconography; Run `node scripts\add.js path/to.svg --type=motiff|frize|pattern|composition`. (path to svg?)
-   The previous command will hash the svg file add the icon and index it automatically.
+2. Add svg to iconography; Run `node scripts\add.js path/to.svg --type=motiff|frize|pattern|composition`. (path to svg?)
+   The previous command will optimize, hash and add the svg automatically.
    It will also attempt to optimize the svg code. The command will overwrite and rename the input file. If it does not happen it measn that an icon exactly like it already exists in the database.
 
-# Meta Data
+# Iconography
 
 ```json
 {
   "hash": "{svghash}",
   "complexity": 42,
-  "scale": "thinnest part of svg",
   "type": "motiff | frize | tile | ensemble",
-  "extra": {
+  "meta": {
     "location": "Street, City, Country",
-    "photo": "Link to real world image"
+    "photo_url": "Link to real world image"
   }
 }
 ```
