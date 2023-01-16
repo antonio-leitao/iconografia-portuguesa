@@ -2,7 +2,7 @@
 <picture><img width="250" src="https://raw.githubusercontent.com/antonio-leitao/iconografia-portuguesa/master/icons/321abd1552d04df78f886e11b2a444d72d252d9f885e25d8cefd6cf53859bf1b.svg"></picture>
 <h2 align="center">Portuguese Iconography</h2>
 <p align="center">
-Portuguese Iconography (Iconografia Portuguesa) is a database designs and patterns that have shaped and been shaped by portuguese culture. The main purpose of this repository is to trace, catalogue and index them as well as to make this Iconography known to the world.</p>
+Portuguese Iconography (Iconografia Portuguesa) is a database of designs and patterns representative of the Portugal's culture and history. This repository aims to document, catalog and index these designs, making them accessible to the world, and to preserve this unique aspect of Portuguese culture for future generations.</p>
 </p>
 
 <p align="center">
@@ -16,7 +16,7 @@ Portuguese sidewalks, or _"calçadas"_, are not just functional walkways, but a 
 
 The traditional Portuguese sidewalk is made of small, flat stones, typically granite, and is laid out in a specific pattern. The work is done by skilled artisans _"calceteiros"_ who not only design the patterns but who cut and shape the stones, and then carefully lay them out to create the desired pattern. The Iconography used in these sidewalks is often influenced by the region in which they are located, and can include geometric shapes, religious symbols, architecture, and even scenes from local folklore and legends.
 
-<img src='assets/restauradores_readme.jpeg' width='200px' align="left" style="float:right;margin-left:10pt"></img>
+<img src='assets/restauradores_readme.jpeg' width='300px' align="left" style="float:right;margin-left:10pt"></img>
 
 Today many of the traditional sidewalks have been lost to time and neglect. Most cities and towns have begun replacing the traditional sidewalks with modern concrete pavements, which are seen as more durable, easier to maintain and safer.
 
