@@ -2,7 +2,7 @@
 <picture><img width="250" src="https://raw.githubusercontent.com/antonio-leitao/iconografia-portuguesa/master/icons/321abd1552d04df78f886e11b2a444d72d252d9f885e25d8cefd6cf53859bf1b.svg"></picture>
 <h2 align="center">Portuguese Iconography</h2>
 <p align="center">
-Portuguese Iconography (Iconografia Portuguesa) is a database of designs and patterns representative of the Portugal's culture and history. This repository aims to document, catalog and index these designs, making them accessible to the world, and to preserve this unique aspect of Portuguese culture for future generations.</p>
+Portuguese Iconography (Iconografia Portuguesa) is a database of designs and patterns representative of Portugal's culture and history. This repository aims to document, catalog and index these designs, making them accessible to the world, and to preserve this unique aspect of Portuguese culture for future generations.</p>
 </p>
 
 <p align="center">

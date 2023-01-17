@@ -4,7 +4,10 @@
   "description": "Portuguese Iconography (Iconografia Portuguesa) is a database of glyphs, motiffs and patterns that have shaped and been shaped by portughese culture. The main purpose of this repository is to trace, catalogue and index them as well as to make this Iconography known to the world.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "add": "node scrips/add.js",
+    "check": "node scripts/check_correspondence.js"
+
   },
   "repository": {
     "type": "git",
@@ -22,6 +25,7 @@
   },
   "homepage": "https://github.com/Antonio-Leitao/iconografia-portuguesa#readme",
   "dependencies": {
+    "inquirer": "^8.2.5",
     "minimist": "^1.2.7",
     "svgo": "^3.0.2"
   }

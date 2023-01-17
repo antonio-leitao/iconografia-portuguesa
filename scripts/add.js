@@ -4,6 +4,7 @@ const minimist = require("minimist");
 const crypto = require("crypto");
 const { optimize } = require("svgo");
 const svgoConfig = require("./svgo.config.js");
+const inquirer = require("inquirer");
 
 // Function 1: Optimizes the SVG file and returns the optimized content
 function optimizeSVG(file) {
@@ -71,13 +72,31 @@ function readJsonFile(filepath) {
   }
 }
 
-function checkArgs(args) {
+const request_path = [
+  {
+    type: "list",
+    name: "type",
+    message: "Provide the pattern type:",
+    choices: ["Motiff", "Frize", "Tile", "Composition"],
+    filter(val) {
+      return val.toLowerCase();
+    },
+  },
+];
+
+async function checkArgs(args) {
   const path = args._[0];
-  const type = args.type;
+  let type = args.type;
   if (!path) {
     console.error("Error: Please provide a filepath");
     process.exit(1);
   }
+
+  if (!type) {
+    const answers = await inquirer.prompt(request_path);
+    type = answers["type"];
+  }
+
   const acceptableTypes = ["motiff", "frize", "tile", "composition"];
   if (!acceptableTypes.includes(type)) {
     console.error(
@@ -91,7 +110,7 @@ function checkArgs(args) {
 async function main() {
   //Check arguments
   const args = minimist(process.argv.slice(2));
-  const { path, type } = checkArgs(args);
+  const { path, type } = await checkArgs(args);
 
   //load the metadata json
   let iconography = readJsonFile("data/iconography.json");
@@ -116,7 +135,7 @@ async function main() {
       if (!existingIcon) {
         iconography.icons.push(icon);
         fs.writeFileSync("icons/" + hash + ".svg", svgString);
-        console.log(`Added ${path.split('/').pop()} to iconography.`);
+        console.log(`Added ${path.split("/").pop()} to iconography.`);
       } else {
         console.log(`Icon already exists!.`);
       }

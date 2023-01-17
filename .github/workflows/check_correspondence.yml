@@ -1,0 +1,32 @@
+name: Check Icons
+
+on:
+  push:
+    branches:
+      - "*"
+
+jobs:
+  check-icons:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run script
+        run: npm run check
+        env:
+          FORCE_COLOR: 1
+        shell: bash
+        id: check_icons
+      - name: Check exit code
+        run: exit ${{ steps.check_icons.outputs.exit_code }}
+        if: ${{ steps.check_icons.outputs.exit_code != 0 }}
